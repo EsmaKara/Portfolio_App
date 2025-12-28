@@ -1,11 +1,9 @@
 import { Link, useLocation } from 'react-router';
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@components/ui/navigation-menu';
 import {
@@ -16,18 +14,10 @@ import {
 } from '@components/ui/dropdown-menu';
 import { Button } from '@components/ui/button';
 import { cn } from '@lib/utils';
-import { BookOpenIcon, HomeIcon, UserIcon, LogInIcon, UserPlusIcon } from 'lucide-react';
+import { HomeIcon } from 'lucide-react';
 
 const Navbar = () => {
   const location = useLocation();
-
-  // Blog verileri - gerçek uygulamada API'den gelecek
-  const blogPosts = [
-    { id: 1, title: 'React ile Modern Web Geliştirme', slug: 'react-modern-web-development' },
-    { id: 2, title: 'TypeScript Best Practices', slug: 'typescript-best-practices' },
-    { id: 3, title: 'Tailwind CSS ile Hızlı Tasarım', slug: 'tailwind-css-fast-design' },
-    { id: 4, title: 'Next.js 14 Yeni Özellikler', slug: 'nextjs-14-new-features' },
-  ];
 
   const isActive = (path: string) => {
     return location.pathname === path || location.pathname.startsWith(path);
